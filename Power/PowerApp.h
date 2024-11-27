@@ -1,8 +1,10 @@
 #pragma once
 
+#include "PowerUtil.h"
+
 namespace ow 
 {
-	class PowerApp
+	class POW_API PowerApp
 	{
 	public:
 		void Run();
