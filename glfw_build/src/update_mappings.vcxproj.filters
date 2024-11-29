@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\OlegO\source\repos\Alex_Ostapyuk_Fall_24\glfw_build\CMakeFiles\6bb72f2b8f733d602d46e02ae6fa91df\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\OlegO\source\repos\Alex_Ostapyuk_Fall_24\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\OlegO\source\repos\Alex_Ostapyuk_Fall_24\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\OlegO\source\repos\Alex_Ostapyuk_Fall_24\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\OlegO\source\repos\Alex_Ostapyuk_Fall_24\glfw_build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{37102BC9-A081-3B7C-A1E4-0F1FC7DDB904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D859ACC9-842B-3699-B516-9B6A82E9CE4B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
