@@ -12,7 +12,10 @@ namespace ow {
 		virtual int getWidth() const override;
 		virtual int getHeight() const override;
 
+		virtual void SwapBuffers() override;
+		virtual void PollEvents() override;
+
 	private:
-		GLFWwindow* windowPtr{ nullptr };
+		GLFWwindow* mWindowPtr{ nullptr };
 	};
 }

@@ -13,6 +13,7 @@ target_compile_definitions(Power
 		PUBLIC
 			$<$<CONFIG:DEBUG>:POW_DEBUG=2>
 			$<$<CONFIG:RelWithDebInfo>:POW_DEBUG=1>
+			POW_OPENGL_STBI
 )
 
 if(MSVC)

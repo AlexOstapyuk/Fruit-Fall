@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Power", "Power\Power.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glfw", "glfw_build\src\glfw.vcxproj", "{56FAC2E5-8D3D-3054-BB89-33972329D780}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glad", "glad\glad.vcxproj", "{BCCC73A2-8797-4B51-9724-00F772392DBA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stbi", "stbi\stbi.vcxproj", "{99F7CD7C-9D71-4109-8BD5-4CF728CC51DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,6 +31,14 @@ Global
 		{56FAC2E5-8D3D-3054-BB89-33972329D780}.Debug|x64.Build.0 = Debug|x64
 		{56FAC2E5-8D3D-3054-BB89-33972329D780}.Release|x64.ActiveCfg = Release|x64
 		{56FAC2E5-8D3D-3054-BB89-33972329D780}.Release|x64.Build.0 = Release|x64
+		{BCCC73A2-8797-4B51-9724-00F772392DBA}.Debug|x64.ActiveCfg = Debug|x64
+		{BCCC73A2-8797-4B51-9724-00F772392DBA}.Debug|x64.Build.0 = Debug|x64
+		{BCCC73A2-8797-4B51-9724-00F772392DBA}.Release|x64.ActiveCfg = Release|x64
+		{BCCC73A2-8797-4B51-9724-00F772392DBA}.Release|x64.Build.0 = Release|x64
+		{99F7CD7C-9D71-4109-8BD5-4CF728CC51DF}.Debug|x64.ActiveCfg = Debug|x64
+		{99F7CD7C-9D71-4109-8BD5-4CF728CC51DF}.Debug|x64.Build.0 = Debug|x64
+		{99F7CD7C-9D71-4109-8BD5-4CF728CC51DF}.Release|x64.ActiveCfg = Release|x64
+		{99F7CD7C-9D71-4109-8BD5-4CF728CC51DF}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

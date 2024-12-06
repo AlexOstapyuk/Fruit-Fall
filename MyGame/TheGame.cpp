@@ -7,8 +7,7 @@ class GameApp : public ow::PowerApp
 	{
 		POW_LOG("Starting Game...");
 
-		ow::PowerWindow win;
-		win.CreateWindow(800, 600, "test");
+		
 	}
 
 	virtual void Update() override

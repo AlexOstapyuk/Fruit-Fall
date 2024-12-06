@@ -15,20 +15,20 @@ namespace ow {
 
 	void WindowGLFW::Create(int width, int height, std::string windowName)
 	{
-		windowPtr = glfwCreateWindow(800, 600, windowName.c_str(), NULL, NULL);
+		mWindowPtr = glfwCreateWindow(800, 600, windowName.c_str(), NULL, NULL);
 
-		if (!windowPtr) {
+		if (!mWindowPtr) {
 			POW_ERROR("Failed to create GLFW!!!");
 		}
 
-		glfwMakeContextCurrent(windowPtr);
+		glfwMakeContextCurrent(mWindowPtr);
 	}
 	int WindowGLFW::getWidth() const
 	{
 		int width{ 0 };
 		int height{ 0 };
 
-		glfwGetWindowSize(windowPtr, &width, &height);
+		glfwGetWindowSize(mWindowPtr, &width, &height);
 
 
 		return width;
@@ -38,8 +38,16 @@ namespace ow {
 		int width{ 0 };
 		int height{ 0 };
 
-		glfwGetWindowSize(windowPtr, &width, &height);
+		glfwGetWindowSize(mWindowPtr, &width, &height);
 
 		return height;
+	}
+	void WindowGLFW::SwapBuffers()
+	{
+		glfwSwapBuffers(mWindowPtr);
+	}
+	void WindowGLFW::PollEvents()
+	{
+		glfwPollEvents();
 	}
 }

@@ -7,14 +7,22 @@
 namespace ow {
 	class POW_API PowerWindow {
 	public:
-		PowerWindow();
+		static void Init();
+		static std::unique_ptr<PowerWindow>& GetWindow();
 
 		void CreateWindow(int width, int height, std::string windowName);
 
 		int getWidth() const;
 		int getHeight() const;
 
+		void SwapBuffers();
+		void PollEvents();
+
 	private:
-		WindowImpl* implementation{ nullptr };
+		std::unique_ptr<WindowImpl> implementation{ nullptr };
+
+		PowerWindow();
+
+		inline static std::unique_ptr<PowerWindow> inst;
 	};
 }
