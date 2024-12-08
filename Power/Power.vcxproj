@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="codeGLFW\WindowGLFW.h" />
     <ClInclude Include="codeOpenGL\OpenGLImage.h" />
+    <ClInclude Include="codeOpenGL\OpenGLShaders.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="ImageImpl.h" />
     <ClInclude Include="include\Power.h" />
@@ -145,12 +146,15 @@
     <ClInclude Include="PowerApp.h" />
     <ClInclude Include="PowerUtil.h" />
     <ClInclude Include="PowerWindow.h" />
+    <ClInclude Include="Shaders.h" />
+    <ClInclude Include="ShadersImpl.h" />
     <ClInclude Include="StartOff.h" />
     <ClInclude Include="WindowImpl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="codeGLFW\WindowGLFW.cpp" />
     <ClCompile Include="codeOpenGL\OpenGLImage.cpp" />
+    <ClCompile Include="codeOpenGL\OpenGLShaders.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -158,6 +162,7 @@
     </ClCompile>
     <ClCompile Include="PowerApp.cpp" />
     <ClCompile Include="PowerWindow.cpp" />
+    <ClCompile Include="Shaders.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glad\glad.vcxproj">

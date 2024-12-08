@@ -3,6 +3,7 @@
 #include "PowerApp.h"
 #include "PowerWindow.h"
 #include "Image.h"
+#include "Shaders.h"
 
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
@@ -60,78 +61,12 @@ namespace ow
 
 		//Shader Code
 
-		const char* vertexShaderSource = R"(
-			#version 330 core
-			
-			layout (location = 0) in vec2 aPos;
-			layout (location = 1) in vec2 aTexCoord;
+		ow::Shaders shaders{ 
+			"../Power/PowerAssets/Shaders/defaultVertexShader.glsl", 
+			"../Power/PowerAssets/Shaders/defaultFragmentShader.glsl"};
 
-			out vec2 TexCoord;
+		shaders.setIntUniform("ScreenDim", { 800,600 });
 
-			uniform ivec2 ScreenDim;
-
-			void main()
-			{
-			   gl_Position = vec4(2*aPos.x/ScreenDim.x - 1, 2*aPos.y/ScreenDim.y - 1, 0.0, 1.0);
-			   TexCoord = aTexCoord;
-			}; 
-			)";
-
-		unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-		glCompileShader(vertexShader);
-
-		int  success;
-		char infoLog[512];
-		glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-
-		if (!success) {
-			glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-			POW_ERROR("ERROR::SHADER::VERTEX::COMPILATION_FAILED1\n" << infoLog);
-		}
-
-		const char* fragmentShaderSource = R"(
-		#version 330 core
-	
-		in vec2 TexCoord;
-		uniform sampler2D ourTexture;
-
-		out vec4 FragColor;
-
-		void main()
-		{
-			FragColor = texture(ourTexture, TexCoord);
-		}
-		)";
-
-		unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-		glCompileShader(fragmentShader);
-
-		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-		if (!success) {
-			glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-			POW_ERROR("ERROR::SHADER::VERTEX::COMPILATION_FAILED2\n" << infoLog);
-		}
-
-		unsigned int shaderProgram = glCreateProgram();
-		glAttachShader(shaderProgram, vertexShader);
-		glAttachShader(shaderProgram, fragmentShader);
-		glLinkProgram(shaderProgram);
-
-		glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-		if (!success) {
-			glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-			POW_ERROR("ERROR::SHADER::PROGRAM_LINKING_FAILED\n" << infoLog);
-		}
-
-		glDeleteShader(vertexShader);
-		glDeleteShader(fragmentShader);
-
-		glUseProgram(shaderProgram);
-
-		int location{ glGetUniformLocation(shaderProgram, "ScreenDim") };
-		glUniform2i(location, 800, 600);
 
 		//Texture
 		ow::Image pic{ "../Power/PowerAssets/Images/thorfinn.png" };
@@ -148,7 +83,7 @@ namespace ow
 			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			glUseProgram(shaderProgram);
+			shaders.Bind();
 			glBindVertexArray(VAO);
 			pic.Bind();
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
