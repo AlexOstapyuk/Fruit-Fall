@@ -4,6 +4,7 @@
 #include "PowerUtil.h"
 #include "Image.h"
 #include "Shaders.h"
+#include "RendererImpl.h"
 
 namespace ow {
 	class POW_API Renderer
@@ -12,7 +13,7 @@ namespace ow {
 		static void Init();
 
 		static void Draw(Image& file, int xCoord, int yCoord);
-		static void Draw(Image& file, int xCoord, int yCoord, Shaders shader);
+		static void Draw(Image& file, int xCoord, int yCoord, Shaders& shader);
 
 		static void ClearScreen();
 

@@ -1,6 +1,7 @@
 #include "pch.h"
 
 #include "Renderer.h"
+#include "codeOpenGL/OpenGLRenderer.h"
 
 namespace ow {
 	Renderer::Renderer()
@@ -24,7 +25,7 @@ namespace ow {
 		mInstance->mImplementation->Draw(file, xCoord, yCoord);
 	}
 
-	void Renderer::Draw(Image& file, int xCoord, int yCoord, Shaders shader)
+	void Renderer::Draw(Image& file, int xCoord, int yCoord, Shaders& shader)
 	{
 		mInstance->mImplementation->Draw(file, xCoord, yCoord, shader);
 	}

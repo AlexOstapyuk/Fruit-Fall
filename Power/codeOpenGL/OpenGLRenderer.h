@@ -18,8 +18,6 @@ namespace ow {
 		unsigned int mVAO{ 0 };
 		unsigned int mEBO{ 0 };
 
-		Shaders mDefaultShaders{
-			"../PowerAssets/Shaders/defaultVertexShader.glsl",
-			"../PowerAssets/Shaders/defaultFragmentShader.glsl" };
+		Shaders mDefaultShaders;
 	};
 }
