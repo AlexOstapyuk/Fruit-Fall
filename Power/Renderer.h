@@ -9,12 +9,15 @@ namespace ow {
 	class POW_API Renderer
 	{
 	public:
-		Renderer();
+		static void Init();
 
 		static void Draw(Image& file, int xCoord, int yCoord);
-		static void Draw(Image& file, int xCoord, int yCoord, Shaders shaders);
+		static void Draw(Image& file, int xCoord, int yCoord, Shaders shader);
+
+		static void ClearScreen();
 
 	private:
+		Renderer();
 		std::unique_ptr<RendererImpl> mImplementation;
 		inline static std::unique_ptr<Renderer> mInstance;
 	};

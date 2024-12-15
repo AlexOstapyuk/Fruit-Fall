@@ -146,6 +146,7 @@
     <ClInclude Include="PowerApp.h" />
     <ClInclude Include="PowerUtil.h" />
     <ClInclude Include="PowerWindow.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shaders.h" />
     <ClInclude Include="ShadersImpl.h" />
     <ClInclude Include="StartOff.h" />
@@ -162,6 +163,7 @@
     </ClCompile>
     <ClCompile Include="PowerApp.cpp" />
     <ClCompile Include="PowerWindow.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shaders.cpp" />
   </ItemGroup>
   <ItemGroup>
