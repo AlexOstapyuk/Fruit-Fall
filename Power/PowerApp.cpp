@@ -2,6 +2,7 @@
 
 #include "PowerApp.h"
 #include "PowerWindow.h"
+#include "PowerEvents.h"
 #include "Image.h"
 #include "Shaders.h"
 #include "Renderer.h"
@@ -61,6 +62,17 @@ namespace ow
 
 	void PowerApp::Shutdown()
 	{
+	}
+
+
+	void PowerApp::setKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler)
+	{
+		ow::PowerWindow::GetWindow()->setKeyEventHandler(newHandler);
+	}
+
+	void PowerApp::setWindowEventHandler(std::function<void(const WindowEvent&)> newHandler)
+	{
+		ow::PowerWindow::GetWindow()->setWindowEventHandler(newHandler);
 	}
 
 

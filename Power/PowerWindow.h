@@ -3,6 +3,7 @@
 #include "pch.h"
 #include "WindowImpl.h"
 #include "PowerUtil.h"
+#include "PowerEvents.h"
 
 namespace ow {
 	class POW_API PowerWindow {
@@ -14,6 +15,9 @@ namespace ow {
 
 		int getWidth() const;
 		int getHeight() const;
+
+		void setKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler);
+		void setWindowEventHandler(std::function<void(const WindowEvent&)> newHandler);
 
 		void SwapBuffers();
 		void PollEvents();

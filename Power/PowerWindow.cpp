@@ -44,6 +44,16 @@ namespace ow {
 		return implementation->getHeight();
 	}
 
+	void PowerWindow::setKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler)
+	{
+		implementation->setKeyEventHandler(newHandler);
+	}
+
+	void PowerWindow::setWindowEventHandler(std::function<void(const WindowEvent&)> newHandler)
+	{
+		implementation->setWindowEventHandler(newHandler);
+	}
+
 	void PowerWindow::SwapBuffers()
 	{
 		implementation->SwapBuffers();

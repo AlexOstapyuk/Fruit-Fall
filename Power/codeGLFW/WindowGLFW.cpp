@@ -22,6 +22,16 @@ namespace ow {
 		}
 
 		glfwMakeContextCurrent(mWindowPtr);
+
+		glfwSetKeyCallback(mWindowPtr,
+			[](GLFWwindow* window, int key, int scancode, int action, int mods) 
+			{
+				if (action == GLFW_PRESS) {
+					KeyEvent event{ key, KeyEvent::KeyAction::Press };
+					mCallbacks.KeyEventHandler(event);
+				}
+				
+			});
 	}
 	int WindowGLFW::getWidth() const
 	{
@@ -42,10 +52,22 @@ namespace ow {
 
 		return height;
 	}
+
+	void WindowGLFW::setKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler)
+	{
+		mCallbacks.KeyEventHandler = newHandler;
+	}
+
+	void WindowGLFW::setWindowEventHandler(std::function<void(const WindowEvent&)> newHandler)
+	{
+		mCallbacks.WindowEventHandler = newHandler;
+	}
+
 	void WindowGLFW::SwapBuffers()
 	{
 		glfwSwapBuffers(mWindowPtr);
 	}
+
 	void WindowGLFW::PollEvents()
 	{
 		glfwPollEvents();
