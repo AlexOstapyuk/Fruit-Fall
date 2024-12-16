@@ -17,36 +17,32 @@ namespace ow
 	void PowerApp::Run()
 	{
 		ow::PowerWindow::Init();
-		ow::PowerWindow::GetWindow()->CreateWindow(800, 600, "test");
+		ow::PowerWindow::GetWindow()->CreateWindow(1000, 800, "test");
 
 		Renderer::Init();
 
 		Initialize();
 
-		
-
-		//Shader Code
-
-		ow::Shaders shaders{ 
-			"../Power/PowerAssets/Shaders/defaultVertexShader.glsl", 
-			"../Power/PowerAssets/Shaders/defaultFragmentShader.glsl"};
-
-		shaders.setIntUniform("ScreenDim", { 800,600 });
 
 
 		//Texture
 		ow::Image pic{ "../Power/PowerAssets/Images/thorfinn.png" };
+		int x{ 100 };
 
 
+		mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
 
-
-		while (ShouldContinue) {
+		while (mShouldContinue) {
 			Update();
 
 			Renderer::ClearScreen();
 
-			Renderer::Draw(pic, 100, 100);
+			Renderer::Draw(pic, x, 100);
+			x += 2;
+
+			std::this_thread::sleep_until(mNextFrameTime);
+			mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
 			ow::PowerWindow::GetWindow()->SwapBuffers();
 			ow::PowerWindow::GetWindow()->PollEvents();
