@@ -6,3 +6,5 @@
 #include "../Image.h"
 #include "../Shaders.h"
 #include "../Renderer.h"
+#include "../PowerEvents.h"
+#include "../KeyCodes.h"

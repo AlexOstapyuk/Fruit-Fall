@@ -19,6 +19,7 @@ namespace ow
 		void setKeyEventHandler(const std::function<void(const KeyEvent&)>& newHandler);
 		void setWindowEventHandler(std::function<void(const WindowEvent&)> newHandler);
 
+		void DefaultWindowEventHandler(const WindowEvent& event);
 
 	private:
 		bool mShouldContinue{ true };

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../WindowImpl.h"
-//#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
 
 #include "pch.h"
@@ -27,8 +27,8 @@ namespace ow {
 
 
 		struct Callbacks {
-			std::function<void(const KeyEvent&)> KeyEventHandler;
-			std::function<void(const WindowEvent&)> WindowEventHandler;
+			std::function<void(const KeyEvent&)> KeyEventHandler{ [](const KeyEvent&) {} };
+			std::function<void(const WindowEvent&)> WindowEventHandler{ [](const WindowEvent&) {} };
 		} mCallbacks;
 	};
 }

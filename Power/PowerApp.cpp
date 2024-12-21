@@ -22,6 +22,9 @@ namespace ow
 
 		Renderer::Init();
 
+		setWindowEventHandler(
+			[this](const WindowEvent& event) {DefaultWindowEventHandler(event); });
+
 		Initialize();
 
 
@@ -74,6 +77,15 @@ namespace ow
 	{
 		ow::PowerWindow::GetWindow()->setWindowEventHandler(newHandler);
 	}
+
+	void PowerApp::DefaultWindowEventHandler(const WindowEvent& event)
+	{
+		if (event.GetWindowAction() == WindowEvent::WindowAction::Close) {
+			mShouldContinue = false;
+		}
+		
+	}
+
 
 
 }

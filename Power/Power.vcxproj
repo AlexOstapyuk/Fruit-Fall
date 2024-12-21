@@ -143,8 +143,10 @@
     <ClInclude Include="Image.h" />
     <ClInclude Include="ImageImpl.h" />
     <ClInclude Include="include\Power.h" />
+    <ClInclude Include="KeyCodes.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PowerApp.h" />
+    <ClInclude Include="PowerEvents.h" />
     <ClInclude Include="PowerUtil.h" />
     <ClInclude Include="PowerWindow.h" />
     <ClInclude Include="Renderer.h" />
@@ -165,6 +167,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PowerApp.cpp" />
+    <ClCompile Include="PowerEvents.cpp" />
     <ClCompile Include="PowerWindow.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shaders.cpp" />
