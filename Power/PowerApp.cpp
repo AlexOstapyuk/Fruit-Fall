@@ -15,7 +15,7 @@
 
 namespace ow
 {
-	void PowerApp::Run()
+	PowerApp::PowerApp()
 	{
 		ow::PowerWindow::Init();
 		ow::PowerWindow::GetWindow()->CreateWindow(1000, 800, "test");
@@ -24,12 +24,12 @@ namespace ow
 
 		setWindowEventHandler(
 			[this](const WindowEvent& event) {DefaultWindowEventHandler(event); });
-
+	}
+	void PowerApp::Run()
+	{
 		Initialize();
 
 
-
-		//Texture
 		ow::Image pic{ "../Power/PowerAssets/Images/thorfinn.png" };
 		int x{ 100 };
 
