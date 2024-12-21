@@ -7,8 +7,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
+add_subdirectory(stbi)
+add_subdirectory(glad)
 add_subdirectory(glfw)
 add_subdirectory(Power)
 add_subdirectory(MyGame)
 
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT MyGame)
+
+file(COPY Power/PowerAssets DESTINATION ${CMAKE_BINARY_DIR}/Power)
+file(COPY MyGame/Assets DESTINATION ${CMAKE_BINARY_DIR}/MyGame)

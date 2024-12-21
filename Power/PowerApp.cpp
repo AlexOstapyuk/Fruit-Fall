@@ -29,21 +29,14 @@ namespace ow
 	{
 		Initialize();
 
-
-		ow::Image pic{ "../Power/PowerAssets/Images/thorfinn.png" };
-		int x{ 100 };
-
-
 		mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
 
 		while (mShouldContinue) {
-			Update();
-
+			
 			Renderer::ClearScreen();
 
-			Renderer::Draw(pic, x, 100);
-			x += 2;
+			Update();
 
 			std::this_thread::sleep_until(mNextFrameTime);
 			mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;

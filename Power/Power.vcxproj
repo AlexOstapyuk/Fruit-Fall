@@ -154,6 +154,7 @@
     <ClInclude Include="Shaders.h" />
     <ClInclude Include="ShadersImpl.h" />
     <ClInclude Include="StartOff.h" />
+    <ClInclude Include="Unit.h" />
     <ClInclude Include="WindowImpl.h" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,7 @@
     <ClCompile Include="PowerWindow.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shaders.cpp" />
+    <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glad\glad.vcxproj">

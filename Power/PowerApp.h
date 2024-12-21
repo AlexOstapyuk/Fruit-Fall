@@ -11,6 +11,8 @@ namespace ow
 	class POW_API PowerApp
 	{
 	public:
+		PowerApp();
+
 		void Run();
 		virtual void Initialize();
 		virtual void Update();
