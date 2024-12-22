@@ -18,6 +18,8 @@ namespace ow {
 		void updateXCoord(int amount);
 		void updateYCoord(int amount);
 
+		/*void deleteImage();*/
+
 		bool isVisible() const;
 		void setVisibility(bool visibility);
 

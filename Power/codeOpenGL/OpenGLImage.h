@@ -15,6 +15,8 @@ namespace ow {
 
 		virtual void Bind() override;
 
+		//virtual void deleteImage() override;
+
 		~OpenGLImage();
 
 	private:

@@ -13,6 +13,8 @@ namespace ow {
 
 		virtual void Bind() = 0;
 
+		//virtual void deleteImage() = 0;
+
 		virtual ~ImageImpl() {};
 	};
 }

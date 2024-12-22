@@ -15,6 +15,8 @@ namespace ow {
 		int getWidth() const;
 		int getHeight() const;
 
+		//void deleteImage();
+
 	
 		void Bind(); //should be private
 private:

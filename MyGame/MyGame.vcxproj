@@ -137,7 +137,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FruitFall.cpp" />
     <ClCompile Include="TheGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FruitFall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

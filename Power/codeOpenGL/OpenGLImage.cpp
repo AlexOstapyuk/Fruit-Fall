@@ -24,7 +24,6 @@ namespace ow {
 		unsigned char* data{ nullptr };
 		int nrChannels{ 0 };
 		stbi_set_flip_vertically_on_load(true);
-		//"../Power/PowerAssets/Images/thorfinn.png"
 		data = stbi_load(filePath.c_str(), &mWidth, &mHeight, &nrChannels, 0);
 		if (data) {
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mWidth, mHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -55,7 +54,6 @@ namespace ow {
 		unsigned char* data{ nullptr };
 		int nrChannels{ 0 };
 		stbi_set_flip_vertically_on_load(true);
-		//"../Power/PowerAssets/Images/emoji.png"
 		data = stbi_load(filePath.c_str(), &mWidth, &mHeight, &nrChannels, 0);
 		if (data) {
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mWidth, mHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -86,6 +84,12 @@ namespace ow {
 	{
 		glBindTexture(GL_TEXTURE_2D, mImage);
 	}
+
+	/*void OpenGLImage::deleteImage()
+	{
+		glDeleteTextures(1, &mImage);
+	}*/
+
 	OpenGLImage::~OpenGLImage()
 	{
 		glDeleteTextures(1, &mImage);

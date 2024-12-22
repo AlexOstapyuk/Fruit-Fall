@@ -42,6 +42,11 @@ namespace ow
 		return implementation->getHeight();
 	}
 
+	/*void Image::deleteImage()
+	{
+		implementation->deleteImage();
+	}*/
+
 	void Image::Bind()
 	{
 		implementation->Bind();

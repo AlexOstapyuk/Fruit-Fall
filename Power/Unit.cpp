@@ -43,6 +43,11 @@ namespace ow {
 		mYCoord += amount;
 	}
 
+	/*void Unit::deleteImage()
+	{
+		mImage.deleteImage();
+	}*/
+
 	bool Unit::isVisible() const
 	{
 		return mIsVisible;
