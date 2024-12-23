@@ -1,4 +1,4 @@
-add_executable(MyGame TheGame.cpp)
+add_executable(MyGame TheGame.cpp FruitFall.h FruitFall.cpp)
 
 include_directories(../Power/include)
 

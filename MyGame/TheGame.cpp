@@ -17,7 +17,7 @@ class GameApp : public ow::PowerApp
 	{
 		ow::Renderer::Draw(background);
 		
-		if (face_original == true) {
+		if (face_left == true) {
 			ow::Renderer::Draw(character);
 		}
 		else {
@@ -46,10 +46,9 @@ class GameApp : public ow::PowerApp
 
 	} 
 private:
-	ow::Unit character{ "../Power/PowerAssets/Images/pacman.png", 100, 50 };
-	ow::Unit background{ "../Power/PowerAssets/Images/nature_background.png", 0, 0 };
-	//ow::Unit fruit{ "../Power/PowerAssets/Images/apple_2.png" };
-	bool face_original = true;
+	ow::Unit character{ "../Power/PowerAssets/Images/bug_basket.png", 100, 50 };
+	ow::Unit background{ "../Power/PowerAssets/Images/pixil-frame.png", 0, 0 };
+	bool face_left = false;
 	std::vector<ow::Unit> storage;
 	clock_t lastFruit;
 
@@ -60,12 +59,16 @@ private:
 			switch (event.getKeyCode()) 
 			{
 			case POW_KEY_LEFT:
-				face_original = true;
-				character.updateXCoord(-10);
+				face_left = false;
+				if (character.getXCoord() > 0) {
+					character.updateXCoord(-10);
+				}
 				break;
 			case POW_KEY_RIGHT:
-				face_original = false;
-				character.updateXCoord(10);
+				face_left = true;
+				if (character.getXCoord() < ow::PowerWindow::GetWindow()->getWidth() - character.getWidth()) {
+					character.updateXCoord(10);
+				}
 				break;
 			}
 		}
@@ -73,12 +76,16 @@ private:
 			switch (event.getKeyCode())
 			{
 			case POW_KEY_LEFT:
-				face_original = true;
-				character.updateXCoord(-10);
+				face_left = false;
+				if (character.getXCoord() > 0) {
+					character.updateXCoord(-10);
+				}
 				break;
 			case POW_KEY_RIGHT:
-				face_original = false;
-				character.updateXCoord(10);
+				face_left = true;
+				if (character.getXCoord() < ow::PowerWindow::GetWindow()->getWidth() - character.getWidth()) {
+					character.updateXCoord(10);
+				}
 				break;
 			}
 		}
