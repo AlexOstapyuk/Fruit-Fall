@@ -44,6 +44,34 @@ namespace ow {
 		}
 	}
 
+	void Renderer::DrawOpposite(Image& file, int xCoord, int yCoord)
+	{
+		mInstance->mImplementation->DrawOpposite(file, xCoord, yCoord);
+	}
+
+	void Renderer::DrawOpposite(Unit& unit)
+	{
+		if (unit.mIsVisible) {
+			DrawOpposite(unit.mImage, unit.mXCoord, unit.mYCoord);
+		}
+	}
+
+	void Renderer::DrawOpposite(Image& file, int xCoord, int yCoord, Shaders& shader)
+	{
+		mInstance->mImplementation->DrawOpposite(file, xCoord, yCoord, shader);
+	}
+
+	void Renderer::DrawOpposite(Unit& unit, Shaders& shaders)
+	{
+		if (unit.mIsVisible) {
+			DrawOpposite(unit.mImage, unit.mXCoord, unit.mYCoord, shaders);
+		}
+	}
+
+
+
+
+
 	void Renderer::ClearScreen()
 	{
 		mInstance->mImplementation->ClearScreen();

@@ -17,6 +17,11 @@ namespace ow {
 		static void Draw(Image& file, int xCoord, int yCoord, Shaders& shader);
 		static void Draw(Unit& unit);
 		static void Draw(Unit& unit, Shaders& shaders);
+		
+		static void DrawOpposite(Image& file, int xCoord, int yCoord);
+		static void DrawOpposite(Unit& unit);
+		static void DrawOpposite(Image& file, int xCoord, int yCoord, Shaders& shader);
+		static void DrawOpposite(Unit& unit, Shaders& shaders);
 
 
 		static void ClearScreen();

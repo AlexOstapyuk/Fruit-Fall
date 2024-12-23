@@ -9,6 +9,8 @@ namespace ow {
 	public:
 		virtual void Draw(Image& file, int xCoord, int yCoord) = 0;
 		virtual void Draw(Image& file, int xCoord, int yCoord, Shaders& shader) = 0;
+		virtual void DrawOpposite(Image& file, int xCoord, int yCoord) = 0;
+		virtual void DrawOpposite(Image& file, int xCoord, int yCoord, Shaders& shader) = 0;
 
 
 		virtual void ClearScreen() = 0;

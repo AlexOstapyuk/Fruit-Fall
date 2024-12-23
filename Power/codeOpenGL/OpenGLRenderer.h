@@ -10,6 +10,8 @@ namespace ow {
 
 		virtual void Draw(Image& file, int xCoord, int yCoord) override;
 		virtual void Draw(Image& file, int xCoord, int yCoord, Shaders& shader) override;
+		virtual void DrawOpposite(Image& file, int xCoord, int yCoord) override;
+		virtual void DrawOpposite(Image& file, int xCoord, int yCoord, Shaders& shader) override;
 
 
 		virtual void ClearScreen() override;

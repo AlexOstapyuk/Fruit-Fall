@@ -75,7 +75,7 @@ namespace ow {
 		bool y_intersection{ (bot_a <= bot_b && bot_b <= top_a) || 
 			bot_b <= bot_a && bot_a <= top_b};
 
-		return x_intersection + y_intersection;
+		return x_intersection && y_intersection;
 
 	}
 }
