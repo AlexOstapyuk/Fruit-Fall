@@ -4,7 +4,7 @@
 ow::Unit Fruit::addFruit()
 {
 	int x = rand() % ow::PowerWindow::GetWindow()->getWidth()-20;
-	ow::Unit fruit{ "../Power/PowerAssets/Images/apple_2.png", x, ow::PowerWindow::GetWindow()->getHeight() - 50};
+	ow::Unit fruit{ "../MyGame/Assets/apple_2.png", x, ow::PowerWindow::GetWindow()->getHeight() - 50};
 	return fruit;
 }
 

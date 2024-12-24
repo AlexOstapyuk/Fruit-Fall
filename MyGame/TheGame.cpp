@@ -62,8 +62,8 @@ class GameApp : public ow::PowerApp
 
 	} 
 private:
-	ow::Unit character{ "../Power/PowerAssets/Images/bug_basket.png", 100, 50 };
-	ow::Unit background{ "../Power/PowerAssets/Images/pixil-frame.png", 0, 0 };
+	ow::Unit character{ "../MyGame/Assets/bug_basket.png", 100, 50 };
+	ow::Unit background{ "../MyGame/Assets/pixil-frame.png", 0, 0 };
 	Fruit fruit;
 	Counter count;
 	bool face_left{ false }; //image is originally NOT facing left
