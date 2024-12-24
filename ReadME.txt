@@ -2,6 +2,8 @@ Alex Ostapyuk
 
 Hello, this is my Fruit Fall project. In this game, the goal is to catch as many fruit as possible
 
+In order to move in the game, you must use left and right arrow keys
+
 What have I implemented?
 
 1) I added DrawOpposite() functions in rendering so I can use with the key handler, so when the right arrow key is 
@@ -27,3 +29,7 @@ I also added ctime in order to have the fruit spawn every 2 seconds
 
 3) I did not want the character to move out of the window frame, so I made restrictions to the key handler to only
 allow the character to move within the window
+
+4) I added a counter to the game, I decided to make a counter that involved printing images onto the screen instead
+of making the computer draw it out itself. It will only update the counter if a fruit that is visible hits the 
+character image
